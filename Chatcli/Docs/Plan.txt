@@ -1,0 +1,16 @@
+﻿
+1. Internal chat logic
+		Add chatMessage class
+		Add chatLog class
+		Add corresponding methods
+
+2. A working User Interface
+	Implement Console elements placement
+	For the chat log
+	For the user input line
+	Add available functions for the user such as send,privatesend, scroll, quit
+
+3. Communications
+	Server to multiple clients package exchange
+	Timely updates according to requests
+
