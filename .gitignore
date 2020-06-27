@@ -338,5 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/Chatcli/ConnectionManager.cs
-/Chatcli/UserConsole.cs
+
