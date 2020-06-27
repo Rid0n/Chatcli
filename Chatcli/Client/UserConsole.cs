@@ -61,7 +61,7 @@ namespace Chatcli
                 Console.Write("\x1B[1P");
 
             }
-            currentMessage = currentMessage.Remove(currentMessage.Length-n);
+            currentMessage = (currentMessage.Length != 0) ? currentMessage.Remove(currentMessage.Length - n): currentMessage;
         }
         public void Begin()
 
@@ -99,17 +99,16 @@ namespace Chatcli
                 }
                 else if(input.Key == ConsoleKey.Enter)
                 {
-                    if ((currentMessage.Length > 3) & (currentMessage.Remove(3) == "/dm"))
-                    {
-                        //check length
-                        var msgInfo = currentMessage.Substring(4).Split(); // split into username & message
+                    if (currentMessage.Length > 3){
+                        if (currentMessage.Remove(3) == "/dm")
+                        {
+                            //check length
+                            var msgInfo = currentMessage.Substring(4).Split(); // split into username & message
 
+                        }
                     }
-                    else
-                    {
-                        DeleteCharacters(currentMessage.Length); // bugged: deletes only current line
-                        SendMessage(currentMessage);
-                    }
+                    DeleteCharacters(currentMessage.Length); // bugged: deletes only current line
+                    SendMessage(currentMessage);
                     currentMessage = "";
                     Console.SetCursorPosition(6+Username.Length+dateTimeLength, cursorInputPosition[1]);
                 }
